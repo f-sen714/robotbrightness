@@ -24,7 +24,7 @@ public class SpeedControl implements Behavior {
             colorSensor.getRedMode().fetchSample(sample, 0);
             
             // darkness exits speedcontrol
-            if (sample[0] < 0.05) { 
+            if (sample[0] < 0.05 || suppressed) { 
                 return;
             }
 
